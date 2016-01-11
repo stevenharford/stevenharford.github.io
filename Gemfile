@@ -15,3 +15,8 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
 # Deploy a build via rsync, ftp, sftp, or git
 gem 'middleman-deploy', '~> 1.0'
+
+# Sass tool set
+gem 'bitters'
+gem 'bourbon'
+gem 'neat'
