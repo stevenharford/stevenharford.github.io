@@ -2,5 +2,31 @@
 title: Steven Harford
 ---
 
-<%= image_tag 'baby-steven.jpeg', :alt => 'Baby Steven' %>
-<p>Since 1975!</p>
+<header role="banner">
+    <%= link_to 'Steven Harford', 'http://www.stevenharford.com/' %>
+</header>
+
+<main role="main">
+    <section>
+        <h1>Profile</h1>
+    </section>
+
+    <section>
+        <h1>Random facts</h1>
+    </section>
+
+    <section>
+        <h1>Timeline</h1>
+    </section>
+
+    <section>
+        <h1>Contact</h1>
+
+        <%= link_to 'Mail', 'mailto:steven@stevenharford.com' %>
+        <%= link_to 'GitHub', 'https://github.com/stevenharford' %>
+    </section>
+</main>
+
+<footer role="contentinfo">
+    &copy; 2011&ndash;<%= Date.today.year %> Steven Harford
+</footer>
