@@ -20,3 +20,6 @@ gem 'middleman-deploy', '~> 1.0'
 gem 'bitters'
 gem 'bourbon'
 gem 'neat'
+
+# Middleman extension for obfuscating email addresses
+gem 'middleman-protect-emails'
