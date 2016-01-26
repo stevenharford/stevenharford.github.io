@@ -1,0 +1,34 @@
+@mixin layout-timeline-event($events-per-row, $columns-per-row) {
+    @include span-columns($columns-per-row / $events-per-row of $columns-per-row);
+    @include omega(#{$events-per-row}n);
+
+    &:nth-child(n+#{$events-per-row + 1}) {
+        margin-top: flex-gutter($columns-per-row);
+    }
+}
+
+.timeline-event {
+    @include media($small-viewport) {
+        @include layout-timeline-event(1, $small-grid - $total-grid-margin);
+    }
+
+    @include media($medium-viewport) {
+        @include layout-timeline-event(2, $medium-grid - $total-grid-margin);
+    }
+
+    @include media($large-viewport) {
+        @include layout-timeline-event(3, $large-grid - $total-grid-margin);
+    }
+}
+
+.timeline-event {
+    line-height: 0;
+
+    img {
+        width: 100%;
+    }
+
+    figcaption {
+        display: none;
+    }
+}

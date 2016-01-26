@@ -4,6 +4,5 @@
 @import "base/base";   /* Bitters needs to be imported before Neat */
 @import "neat";
 
-body {
-    padding: 1em;
-}
+@import "layout/grid";
+@import "modules/timeline";
