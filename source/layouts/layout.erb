@@ -8,8 +8,12 @@
 
         <title><%= current_page.data.title || "Steven Harford" %></title>
 
-        <%= stylesheet_link_tag "normalize", "all" %>
-        <%= javascript_include_tag  "all" %>
+        <%= stylesheet_link_tag "normalize" %>
+        <%= stylesheet_link_tag "all" %>
+        <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" %>
+        <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" %>
+
+        <%= javascript_include_tag "all" %>
     </head>
 
     <body class="<%= page_classes %>">
