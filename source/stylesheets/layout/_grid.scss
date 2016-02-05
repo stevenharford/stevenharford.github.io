@@ -1,7 +1,16 @@
 // The value for $grid-columns is dependent on the viewport size.
 @mixin layout-grid-columns() {
-    @include span-columns($grid-columns - $total-grid-margin);
-    @include shift($grid-margin);
+    .wrapper {
+        $content-columns: $grid-columns - $total-grid-margin;
+        @include span-columns($content-columns);
+        @include shift($grid-margin);
+
+        .content {
+            @include span-columns($content-columns of $content-columns);
+
+            padding: 2em 0;
+        }
+    }
 }
 
 header,
@@ -9,17 +18,15 @@ section,
 footer {
     @include outer-container;
 
-    .wrapper {
-        @include media($small-viewport) {
-            @include layout-grid-columns();
-        }
+    @include media($small-viewport) {
+        @include layout-grid-columns();
+    }
 
-        @include media($medium-viewport) {
-            @include layout-grid-columns();
-        }
+    @include media($medium-viewport) {
+        @include layout-grid-columns();
+    }
 
-        @include media($large-viewport) {
-            @include layout-grid-columns();
-        }
+    @include media($large-viewport) {
+        @include layout-grid-columns();
     }
 }

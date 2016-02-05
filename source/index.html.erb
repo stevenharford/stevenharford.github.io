@@ -2,64 +2,72 @@
 title: Steven Harford
 ---
 
-<header role="banner">
+<header class="introduction" role="banner">
     <div class="wrapper">
-        <h1><%= link_to 'Steven Harford', 'http://www.stevenharford.com/' %></h1>
+        <div class="content">
+            <h1><%= link_to 'Steven Harford', 'http://www.stevenharford.com/' %></h1>
+
+            <p>Family Guy &ndash; Computer Geek</p>
+        </div>
     </div>
 </header>
 
 <main role="main">
-    <section>
-        <div class="wrapper profile">
-            <h1>Profile</h1>
+    <section class="profile">
+        <div class="wrapper">
+            <div class="content">
+                <h1>Profile</h1>
 
-            <% 3.times do %>
                 <p><%= lorem.paragraph %></p>
-            <% end %>
+            </div>
         </div>
     </section>
 
-    <section>
-        <div class="wrapper random-facts">
-            <h1>Random facts</h1>
+    <section class="timeline">
+        <div class="wrapper">
+            <div class="content">
+                <h1 class="timeline-heading">Timeline</h1>
 
-            <ul>
-                <% 10.times do %>
-                    <li><%= lorem.sentence %></li>
-                <% end %>
-            </ul>
+                <ol class="timeline-events">
+                    <% 1.upto(12) do |i| %>
+                        <li class="timeline-event">
+                            <figure>
+                                <%= image_tag lorem.image('300x200', :random_color => true), :alt => "Photograph of Steven Harford" %>
+                                <figcaption>Photograph of Steven Harford</figcaption>
+                            </figure>
+                        </li>
+                    <% end %>
+                </ol>
+            </div>
         </div>
     </section>
 
-    <section>
-        <div class="wrapper timeline">
-            <h1 class="timeline-heading">Timeline</h1>
+    <section class="contact">
+        <div class="wrapper">
+            <div class="content">
+                <h1>Contact</h1>
 
-            <ol class="timeline-events">
-                <% 1.upto(40) do |age| %>
-                    <li class="timeline-event">
-                        <figure>
-                            <%= image_tag lorem.image('300x200', :random_color => true), :alt => "Photograph of Steven Harford aged #{age}" %>
-                            <figcaption><%= age %></figcaption>
-                        </figure>
+                <ul>
+                    <li>
+                        <% link_to 'https://github.com/stevenharford' do %>
+                            <span class="fa fa-github"></span> GitHub
+                        <% end %>
                     </li>
-                <% end %>
-            </ol>
-        </div>
-    </section>
-
-    <section>
-        <div class="wrapper contact">
-            <h1>Contact</h1>
-
-            <%= link_to 'Mail', 'mailto:steven@stevenharford.com' %>
-            <%= link_to 'GitHub', 'https://github.com/stevenharford' %>
+                    <li>
+                        <% link_to 'mailto:steven@stevenharford.com' do %>
+                            <span class="fa fa-envelope"></span> Email
+                        <% end %>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 </main>
 
-<footer role="contentinfo">
+<footer class="copyright" role="contentinfo">
     <div class="wrapper">
-        &copy; 2011&ndash;<%= Date.today.year %> Steven Harford
+        <div class="content">
+            &copy; 2011&ndash;<%= Date.today.year %> Steven Harford
+        </div>
     </div>
 </footer>
