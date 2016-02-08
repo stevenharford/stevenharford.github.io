@@ -1,0 +1,4 @@
+@mixin hide-element() {
+    @include hide-text();
+    position: absolute;
+}

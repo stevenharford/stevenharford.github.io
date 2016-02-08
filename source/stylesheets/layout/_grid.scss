@@ -1,15 +1,16 @@
 // The value for $grid-columns is dependent on the viewport size.
 @mixin layout-grid-columns() {
+    $content-columns: $grid-columns - $total-grid-margin;
+
     .wrapper {
-        $content-columns: $grid-columns - $total-grid-margin;
         @include span-columns($content-columns);
         @include shift($grid-margin);
+    }
 
-        .content {
-            @include span-columns($content-columns of $content-columns);
+    .content {
+        @include span-columns($content-columns of $content-columns);
 
-            padding: 2em 0;
-        }
+        padding: 2em 0;
     }
 }
 

@@ -1,0 +1,14 @@
+.profile {
+    .profile-heading {
+        @include hide-element();
+    }
+
+    .profile-description {
+        text-align: center;
+        font-size: 1.25em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -21,6 +21,10 @@
     }
 }
 
+.timeline-heading {
+    @include hide-element();
+}
+
 .timeline-event {
     line-height: 0;
 
