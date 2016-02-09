@@ -26,13 +26,54 @@
 }
 
 .timeline-event {
-    line-height: 0;
+    figure {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+    }
 
-    img {
+    .timeline-event-photo {
+        display: block;
         width: 100%;
+
+        @include transition-property(transform);
+        @include transition-duration(1.25s);
+    }
+
+    figure:hover .timeline-event-photo {
+        @include transform(scale(1.1));
     }
 
     figcaption {
-        display: none;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        padding: 1em;
+        background-color: transparentize(black, 0.25);
+        color: white;
+        opacity: 0;
+
+        // Horizontally and vertically center text.
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @include transition-property(opacity);
+        @include transition-duration(1.25s);
+    }
+
+    figure:hover figcaption {
+        opacity: 1;
+    }
+
+    .timeline-event-heading {
+        font-size: 2em;
+    }
+
+    .timeline-event-description:last-child {
+        margin-bottom: 0;
     }
 }
