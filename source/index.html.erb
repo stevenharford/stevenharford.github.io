@@ -1,5 +1,80 @@
 ---
 title: Steven Harford
+
+timeline_events:
+    - photo: baby-steven.jpeg
+      heading: Baby
+      description:
+          That's me there, growing up in
+          <a href="https://en.wikipedia.org/wiki/Skerries,_Dublin">Skerries</a>.
+
+    - photo: first-holy-communion.jpeg
+      heading: Atheism
+      description:
+          My First Holy Communion. I made £86. I'm an atheist now. I'm keeping
+          the money.
+
+    - photo: school-friends.jpeg
+      heading: School
+      description:
+          Celebrating my last day of school with friends. I spent the next
+          decade unlearning the bad habits I acquired there. Lovely!
+
+    - photo: bsc-graduation.jpeg
+      heading: College
+      description:
+          I have a BSc in Computer Applications and a
+          <a href="http://doras.dcu.ie/17420/">PhD in Neural Networks</a> from
+          <a href="http://www.dcu.ie/">Dublin City University</a>. Not that I'm
+          bragging.
+
+    - photo: old-trafford.jpeg
+      heading: Manchester United
+      description:
+          Supporting Manchester United at Old Trafford. Yes, I'm still a United
+          fan.
+
+    - photo: humanist-wedding.jpeg
+      heading: Fiona
+      description:
+          Getting married to the stupendous Fiona. Like, the best wife ever.
+
+    - photo: rubicon-name-plate.jpeg
+      heading: Rubicon
+      description:
+          Fiona and I founded <a href="https://www.rubiconic.ie/">Rubicon</a> in
+          2005. I'm Rubicon's resident computer geek. Fiona does the important
+          stuff.
+
+    - photo: finishing-the-connemarathon.jpeg
+      heading: Running
+      description:
+          I like running. I even ran the
+          <a href="http://www.connemarathon.com/">Connemarathon</a>. Check out
+          that guy over my right shoulder, that's my Dad.
+
+    - photo: family-portrait.jpeg
+      heading: Kids
+      description:
+          I have two beautiful children, Ava and Lucas.
+
+    - photo: vegetarian-cooking.jpeg
+      heading: Vegetarianism
+      description:
+          Cooking a veggie meal with Ava. I've been a vegetarian since 2000. My
+          wife and kids are also veggies.
+
+    - photo: sling-shot.jpeg
+      heading: Slings
+      description:
+          I wear my kids in slings. I've also been known to wear a truly awesome
+          beard.
+
+    - photo: kids-at-the-piano.jpeg
+      heading: Music
+      description:
+          I used to play the guitar and the piano. Hopefully these guys have
+          more success than their Dad.
 ---
 
 <header class="banner" role="banner">
@@ -18,7 +93,14 @@ title: Steven Harford
             <div class="content">
                 <h1 class="profile-heading">Profile</h1>
 
-                <p class="profile-description"><%= lorem.paragraph %></p>
+                <p class="profile-description">
+                    Hi there! I'm Steven, a super proud family guy and total
+                    computer geek. Mostly, I split my time between playing with
+                    my kids and playing on my computer (ahem, working). I hope,
+                    as this site grows, you'll come back to see what I've been
+                    getting up to. In the meantime, why not explore the photos
+                    below to discover what I'm about.
+                </p>
             </div>
         </div>
     </section>
@@ -29,13 +111,14 @@ title: Steven Harford
                 <h1 class="timeline-heading">Timeline</h1>
 
                 <ol class="timeline-events">
-                    <% 1.upto(12) do |i| %>
+                    <% current_page.data.timeline_events.each do |timeline_event| %>
                         <li class="timeline-event">
                             <figure>
-                                <%= image_tag "http://loremflickr.com/300/200/paris?random=#{i}", :class => "timeline-event-photo", :alt => "" %>
+                                <%= image_tag timeline_event.photo, :class => "timeline-event-photo", :alt => "" %>
+
                                 <figcaption>
-                                    <h2 class="timeline-event-heading"><%= lorem.date "%Y" %></h2>
-                                    <p class="timeline-event-description"><%= lorem.sentence %></p>
+                                    <h2 class="timeline-event-heading"><%= timeline_event.heading %></h2>
+                                    <p class="timeline-event-description"><%= timeline_event.description %></p>
                                 </figcaption>
                             </figure>
                         </li>
